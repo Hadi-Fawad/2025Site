@@ -1,0 +1,67 @@
+<%- contentFor('style') %>
+<style>
+    body {
+        background-color: #000000 !important;
+    }
+
+    nav {
+        background-color: #000000 !important;
+        border-bottom: 2px solid #333333 !important;
+    }
+
+    nav a {
+        color: #888888 !important;
+    }
+
+    nav a:hover {
+        color: #ffffff !important;
+    }
+
+    main {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+    }
+
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+        background-color: #000000;
+    }
+
+    .photo-item {
+        aspect-ratio: 1;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .photo-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+    }
+
+    .photo-item img:hover {
+        opacity: 0.8;
+    }
+
+    h1, h2 {
+        color: #ffffff !important;
+    }
+</style>
+
+<%- contentFor('body') %>
+<main>
+    <div class="photo-grid">
+        <div class="photo-item">
+            <img src="/images/072323.072323-R1-012-4A.jpg" alt="Photo">
+        </div>
+        <div class="photo-item">
+            <img src="/images/072323.072323-R1-064-30A.jpg" alt="Photo">
+        </div>
+        <!-- ... rest of your photo items ... -->
+    </div>
+</main>
