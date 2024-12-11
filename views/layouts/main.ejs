@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
+    <title><%= title %> - Hadi Fawad</title>
     <link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <style>
         /* E-ink grayscale color variables */
@@ -14,7 +14,7 @@
             --eink-mid-dark: #666666;
             --eink-medium: #888888;
             --eink-mid-light: #AAAAAA;
-            --eink-light: #CBCBCB;    /* Background color */
+            --eink-light: #CBCBCB;
             --eink-white: #FFFFFF;
         }
 
@@ -23,7 +23,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #d8d1c6; /* or background eink-light? */
+            background-color: #d8d1c6;
             color: var(--eink-black);
         }
 
@@ -84,18 +84,21 @@
         }
 
         .social-links {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--eink-black);
-            text-align: left;
+        margin: 2rem;  /* Change from margin-top to margin for consistent spacing */
+        padding-top: 1rem;
+        border-top: 1px solid var(--eink-black);
+        text-align: left;
         }
 
         .social-links a {
-            margin-right: 1rem;
+            margin-right: 2rem;  /* Match nav link spacing */
+            color: var(--eink-black);
+            text-decoration: none;  /* Remove underline to match nav */
+            font-size: 0.9rem;     /* Match nav font size */
         }
 
-        p {
-            text-align: left;
+        .social-links a:hover {
+            color: var(--eink-mid-dark);  /* Match nav hover effect */
         }
 
         @media (max-width: 600px) {
@@ -114,6 +117,7 @@
             }
         }
     </style>
+    <%- style %>
 </head>
 <body>
     <nav>
@@ -124,35 +128,13 @@
         <a href="/photos">photos i've taken 📷</a>
     </nav>
 
-    <main>
-        <h1>Hey I'm Hadi Fawad!</h1>
+    <%- body %>
 
-        <h2>At the moment I'm:</h2>
-        <ul>
-            <li>• Employed as a Machine Learning Engineer @ <a href="https://www.saic.com/what-we-do/mission-IT/data-and-ai" target="_blank" rel="noopener noreferrer">SAIC</a></li>
-            <li>• <a href="https://gaeia.world" target="_blank" rel="noopener noreferrer">GAEIA</a> 2024 Cohort Research Fellow</li>
-            <li>• Working on a research project with the <a href="https://www.unhcr.org/us/" target="_blank" rel="noopener noreferrer">UNHCR</a></li>
-            <li>• Trying to apply SSVEP to Stenotype Machines</li>
-        </ul>
-
-        <h2>In the past I've:</h2>
-        <ul>
-            <li>• Conducted Gene Ontology Enrichment & Data Analysis at Stanford University for a proposed research paper</li>
-            <li>• Contributed to Data Availability Studies at the National Weather Center in Oklahoma</li>
-            <li>• Graduated with my BS in Computer Science :></li>
-            <li>• Participated in a couple of Hackathons! and even got 2nd at HackHarvard</li>
-        </ul>
-
-        <p style="margin-top: 2rem">If any of these areas interest you or you have experience with them, please reach out!</p>
-
-        <p>You can find me at the links below or say hi at [abdulhfawad] at gmail dot com.</p>
-
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/abdul-hadi-fawad/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/Hadi-Fawad" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://x.com/HadiFawadd" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="https://letterboxd.com/HFawad/" target="_blank" rel="noopener noreferrer">Letterboxd</a>
-        </div>
-    </main>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/abdul-hadi-fawad/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Hadi-Fawad" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://x.com/HadiFawadd" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://letterboxd.com/HFawad/" target="_blank" rel="noopener noreferrer">Letterboxd</a>
+    </div>
 </body>
 </html>

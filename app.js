@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'Home',
-        content: 'Welcome'  // if you're using content variable
+        layout: 'layouts/main'
     });
 });
 
@@ -47,7 +47,7 @@ app.get('/books', (req, res) => {
 });
 
 app.get('/photos', (req, res) => {
-    res.render('/photos', {
+    res.render('photos', {
         title: 'Photos',
         content: 'Photo gallery'
     });

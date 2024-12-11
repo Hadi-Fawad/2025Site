@@ -1,6 +1,58 @@
-<%- include('layouts/main', { title: title, content: content }) %>
+<%- contentFor('style') %>
+<style>
+    main {
+        padding: 0 2rem;
+    }
 
-<div class="container">
-    <h1><%= title %></h1>
-    <p><%= content %></p>
-</div>
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;      /* Reduced space after heading */
+        margin-top: 0.5rem;       /* Reduced space at top */
+        color: var(--eink-black);
+        text-align: left;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-top: 1.5rem;       /* Reduced space before subheadings */
+        margin-bottom: 0.5rem;    /* Reduced space after subheadings */
+        color: var(--eink-darker);
+        text-align: left;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        text-align: left;
+        margin-top: 0.25rem;      /* Minimal space after headings */
+    }
+
+    li {
+        margin-bottom: 0.25rem;   /* Reduced space between list items */
+    }
+</style>
+
+<%- contentFor('body') %>
+<main>
+    <h1>Hey I'm Hadi Fawad!</h1>
+
+    <h2>At the moment I'm:</h2>
+    <ul>
+        <li>• Employed as a Machine Learning Engineer @ <a href="https://www.saic.com/what-we-do/mission-IT/data-and-ai" target="_blank" rel="noopener noreferrer">SAIC</a></li>
+        <li>• <a href="https://gaeia.world" target="_blank" rel="noopener noreferrer">GAEIA</a> 2024 Cohort Research Fellow</li>
+        <li>• Working on a research project with the <a href="https://www.unhcr.org/us/" target="_blank" rel="noopener noreferrer">UNHCR</a></li>
+        <li>• Trying to apply SSVEP to Stenotype Machines</li>
+    </ul>
+
+    <h2>In the past I've:</h2>
+    <ul>
+        <li>• Conducted Gene Ontology Enrichment & Data Analysis at Stanford University for a proposed research paper</li>
+        <li>• Contributed to Data Availability Studies at the National Weather Center in Oklahoma</li>
+        <li>• Graduated with my BS in Computer Science :></li>
+        <li>• Participated in a couple of Hackathons! and even got 2nd at HackHarvard</li>
+    </ul>
+
+    <p style="margin-top: 2rem">If any of these areas interest you or you have experience with them, please reach out!</p>
+
+    <p>You can find me at the links below or say hi at [abdulhfawad] at gmail dot com.</p>
+</main>
