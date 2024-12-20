@@ -1,22 +1,148 @@
-<%- include('layouts/main') %>
+<%- contentFor('style') %>
+<style>
+body {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+main {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;  /* Match main page size */
+    margin-bottom: 1.5rem;
+    margin-top: -2rem;  /* Add some controlled spacing above headers */
+
+    color: var(--eink-black);
+}
+
+h2 {
+    font-size: 2rem;  /* Match main page size */
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;  /* Add some controlled spacing above headers */
+
+    color: var(--eink-black);
+}
+.job-entry {
+    margin-bottom: 2rem;
+}
+
+.job-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.job-date {
+    color: var(--eink-mid-dark);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-title {
+    font-size: 1rem;
+}
+
+.job-company a {
+    color: var(--eink-darker);
+    text-decoration: underline;
+}
+
+.job-details {
+    list-style-type: none;
+    padding-left: 1.5rem;  /* Increased from 0 */
+}
+
+.job-details li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;  /* Increased from 1rem */
+    position: relative;
+}
+
+.job-details li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+</style>
+
+<%- contentFor('body') %>
 <main>
-    <h1>My Work</h1>
+    <h1>Work Experience</h1>
 
-    <h2>Machine Learning Projects</h2>
-    <ul>
-        <li>• SSVEP Stenotype Research - Current research on brain-computer interfaces</li>
-        <li>• UNHCR Data Analysis - Working with refugee data to...</li>
-    </ul>
+    <div class="resume-section">
+        <div class="job-entry">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Machine Learning Engineer at SAIC</span> 
+                </div>
+                <div class="job-date">May 2024 - Current</div>
+            </div>
+            <ul class="job-details">
+                <li>Member of the research and development team in the AI department, working on projects and proof-of-concept
+                    work for internal and external clients to showcase the latest technologies and ways to effectively implement them.</li>
+                <li>Developed advanced backend validation methods for a computer vision system, increasing accuracy and saving over
+                    1,000 hours of manual work weekly for both internal and external clients.</li>
+                <li>Assisted in developing a production-grade video and image processing pipeline using TensorFlow, implementing custom instance and semantic segmentation models to automate content annotation at scale</li>
+                <li>Optimized cage code validation process by implementing web scraping and a new search algorithm, reducing
+                    runtime by 85%.</li>
+                <li>Researched comprehensive monitoring and diagnostics system for distributed training jobs, reducing mean time to
+                    resolution for issues by 50% and improving overall system reliability.</li>
+            </ul>
+        </div>
 
-    <h2>Data Science Work</h2>
-    <ul>
-        <li>• Gene Ontology Enrichment Analysis at Stanford</li>
-        <li>• National Weather Center Data Availability Studies</li>
-    </ul>
+        <div class="job-entry">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Research Assistant</span> at 
+                    <span class="job-company">Stanford University</a></span>
+                </div>
+                <div class="job-date">August 2023 - May 2024</div>
+            </div>
+            <ul class="job-details">
+                <li>Spearheaded large-scale data analysis projects, processing and analyzing multi-modal medical datasets exceeding 1.5TB using advanced Python libraries including NumPy, Pandas, and SciPy.</li>
+                <li>Utilized statistical techniques, ranging from Bayesian inference to causal inference models, deriving insights from complex studies on heart health, contributing to a high-impact research paper being submitted to Nature.</li>
+                <li>Created workflows using parallel processing to reduce model training time by 50% and to enable ingestion of larger datasets.</li>
+            </ul>
+        </div>
 
-    <h2>Hackathon Projects</h2>
-    <ul>
-        <li>• HackHarvard 2nd Place Project - [Project Name and brief description]</li>
-        <li>• Other notable hackathon projects...</li>
-    </ul>
+        <div class="job-entry">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Research Contributor</span> at 
+                    <span class="job-company">GAEIA</a></span>
+                </div>
+                <div class="job-date">March 2024 - Present</div>
+            </div>
+            <ul class="job-details">
+                <li>Part of the 2024 cohort of the Global Alliance on Ethics and Impact of Advanced Technologies founded by Stanford University, interacting in monthly sessions with industry professionals and PhD students on present-day Ethical AI Issues and Cases.</li>
+                <li>Collaborating with the UNHCR to propose AI tools for humanitarian aid, developing strategic approaches to leverage machine learning for refugee support systems and crisis response.</li>
+            </ul>
+        </div>
+
+        <div class="job-entry">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Software Engineer Intern</span> at 
+                    <span class="job-company">Spectrum</a></span>
+                </div>
+                <div class="job-date">May 2023 - August 2023</div>
+            </div>
+            <ul class="job-details">
+                <li>Led the development, implementation, and demonstrations of a system that automated the update process for the
+                    development environments of 200+ engineers development environments.</li>
+                <li>Optimized system performance through advanced containerization and orchestration techniques, reducing environment update time from 10+ hours to just 5 minutes.</li>
+            </ul>
+        </div>
+
+        <!-- Add more job entries as needed -->
+    </div>
+
+    <h2>Projects and Publications!</h2>
+    <div class="resume-section">
+        <!-- Add your project entries here -->
+    </div>
 </main>
