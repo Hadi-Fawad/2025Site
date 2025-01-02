@@ -1,21 +1,21 @@
-// app.js
 const express = require('express');
 const path = require('path');
-const app = express();
-const port = 3000;
 const expressLayouts = require('express-ejs-layouts');
 
+const app = express();
+const port = process.env.PORT || 3000;
 
 // Set up EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+// Important: Add these static file middleware BEFORE your routes
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/documents', express.static(path.join(__dirname, 'documents')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
 app.use(expressLayouts);
 app.set('layout', 'layouts/main');
-
-// Static files middleware
-app.use(express.static('public'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.get('/', (req, res) => {
