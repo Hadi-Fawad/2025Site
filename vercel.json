@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "./app.js",    // Change this from "./index.js" to "./app.js"
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
+    ],
+    "scripts": {
+      "start": "node app.js",
+      "build": "npm install"
+    }
+  }
