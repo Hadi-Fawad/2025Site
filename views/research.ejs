@@ -1,15 +1,135 @@
-<%- include('layouts/main') %>
-<main>
-    <h1>Research Notes & Thoughts</h1>
+<%- contentFor('style') %>
+<style>
+.research-container {
+    padding: 2rem;
+}
 
-    <h2>Current Research</h2>
-    <ul>
-        <li>• Notes on SSVEP and Brain-Computer Interfaces</li>
-        <li>• Thoughts on Machine Learning in Humanitarian Aid</li>
-    </ul>
+.research-header-section {
+    margin-bottom: 2rem;  /* Space between header/description and entries */
+}
 
-    <h2>Technical Write-ups</h2>
-    <ul>
-        <li>• [Your technical blog posts or research summaries]</li>
-    </ul>
+h1 {
+    font-size: 2rem;  /* Match main page size */
+    margin-bottom: 0.25rem;
+    margin-top: -2rem;  /* Add some controlled spacing above headers */
+
+    color: var(--eink-black);
+}
+
+.research-description {
+    color: var(--eink-mid-dark);
+    margin-top: 0;           /* Remove top margin */
+    margin-bottom: 2rem;
+    line-height: 1.2;        /* Reduced line height for tighter text */
+}
+
+.research-entry {
+    border-bottom: 1px solid var(--eink-mid);
+}
+
+.research-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.25rem 0;
+}
+
+.research-title {
+    color: var(--eink-black);
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.active {
+    transform: rotate(90deg);
+}
+
+.research-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1rem;
+}
+
+.research-content.active {
+    max-height: 5000px; /* Increased from 1000px to accommodate longer content */
+    transition: max-height 0.8s ease-in; /* Slightly increased transition time */
+    padding: 1rem;
+    margin-bottom: 1rem; /* Add space at bottom when expanded */
+}
+
+.research-content p {
+    margin-bottom: 1rem; /* Add spacing between paragraphs */
+    line-height: 1.6; /* Improve readability */
+}
+</style>
+
+<%- contentFor('body') %>
+<main class="research-container">
+    <div class="research-header-section">
+        <h1>Research Notes</h1>
+        <p class="research-description">Here's where I store unpolished thoughts related to the research and projects I'm currently working on.</p>
+    </div>
+
+    <div class="research-entry">
+        <div class="research-header" onclick="toggleContent(this)">
+            <div class="research-title">January 2, 2025: <strong>OpenBCI Stenography Project Intro</strong></div>
+            <div class="dropdown-arrow">▶</div>
+        </div>
+        <div class="research-content">
+            <p>
+                Recently, I've been fascinated by the intersection of Computer Science with Neuroscience, particularly in the realm of Brain-Computer Interfaces (BCIs). Which can range from non-invasive methods like EEGs (electroencephalography) to more invasive approaches like electrocorticography (ECoG) or even deep brain stimulation (DBS). The potential of these tools is truly exciting, since they're not just advancing our understanding of the human brain, but they're actually changing lives. We've seen remarkable improvements for people with locked-in syndrome, ALS, and severe paralysis, while neurotech companies like Neuralink, Synchron, and Kernel are pushing the boundaries of what's possible in this field and are exponentially growing.
+            </p>
+            
+            <p>
+                My curiosity led me to explore hands-on experience with EEG technology. While I hadn't completely figured out my exact project direction, I knew I wanted to work with technology that could translate our brain's analog frequencies into digital signals that could potentially help people in meaningful ways.
+            </p>
+            
+            <p>
+                After convincing my brother to kindly support me (thank you!), I invested in the most affordable Open Source BCI on the market - the $500 <a href="https://shop.openbci.com/products/ganglion-board?utm_source=Google-Ads&utm_medium=x&utm_campaign=PMax-Shopping-OpenBCI&utm_adgroudp=&utm_term=&gad_source=1&gclid=Cj0KCQiAj9m7BhD1ARIsANsIIvBBlSHwIWrMWzSbD91C_4miBt0F7OlgtpaCxWaqJv5WWNY9pQN1yGEaAp4QEALw_wcB">Ganglion Board from OpenBCI</a>. Once it arrived, I dove into the somewhat convoluted process of assembling all the necessary components - the wires, electrodes, and head straps needed to actually receive and process signals through <a href = "https://docs.openbci.com/Software/OpenBCISoftware/GUIDocs/"> OpenBCI's GUI software platform</a>.
+            </p>
+            
+            <p>
+                It got real when I strapped on the EEG and started analyzing the actual brain wave data. It's fascinating how our brains produce different types of waves: alpha waves (8-13 Hz) show up when we're relaxed, beta waves (13-30 Hz) appear during active thinking and focus, theta waves (4-8 Hz) emerge during meditation and light sleep, and delta waves (0.5-4 Hz) dominate during deep sleep. Each of these frequencies tells its own story about our current mental state.
+            </p>
+            
+            <p>
+                My research led me to learn about some groundbreaking work from <a href="https://www.nature.com/articles/s41586-023-06443-4">UCSF</a> and <a href="https://www.nature.com/articles/s41586-023-06377-x">Stanford</a> in 2023, where researchers developed neuroprosthetic systems that could decode attempted speech directly from brain signals with unprecedented accuracy. At UCSF, they created a system allowing participants to control a digital avatar and generate synthesized speech, while Stanford's team achieved speeds of up to 62 words per minute through decoded neural signals - a massive leap toward natural speaking rates of 150-200 words per minute. This work, alongside Neuralink's advances in invasive BCIs, shows the incredible potential of the technology.
+            </p>
+            
+            <p>
+                Although, there's a significant catch - these systems require surgical implantation of electrode arrays into the brain's surface, and we're still learning about the long-term effects of these implants. Issues like electrode deterioration, tissue response, and the need for periodic replacement of implanted hardware raise important practical and ethical concerns. I feel we need solutions that can help people now, without waiting for invasive technologies to be perfected.
+            </p>
+            
+            <p>
+                While reading research papers about BCIs for communication, I noticed that Words Per Minute (WPM) was a crucial metric in converting thoughts to digital output, whether that's text on a screen or synthesized speech. This got me thinking about stenotype machines, which are currently the fastest physical typing devices, capable of 200-300 WPM (though mastering one takes months). What makes stenotype machines unique is their chord-based input system - instead of typing each letter, they use three simultaneous inputs (initial consonants, vowel sounds, and final consonants) which combine through specialized software to form complete words. For example, typing "Important" on a regular keyboard takes 9 individual keystrokes, while a stenotype machine could do it in just 3 simultaneous keypresses.
+            </p>
+            
+            <p>
+                This led me to explore the possibility of combining non-invasive EEG signals with stenotype-style input. I investigated several BCI control methodologies: Motor Imagery (MI), which detects brain patterns when imagining physical movements; P300, which uses the brain's response to unexpected stimuli; and SSVEP (Steady-State Visual Evoked Potential), which measures brain responses to flickering visual stimuli. SSVEP emerged as the most promising approach for a low-cost BCI system because it produces stronger, more easily detectable signals and requires less training than the other methods, although, frankly I won't be sure until I start trying them myself.
+            </p>
+            
+            <p>
+                Currently, I'm still deep in the fundamentals of neuroscience and BCI technology, but I believe I have an interesting idea: creating a system where someone can wear an affordable EEG headset, look at a monitor displaying a virtual stenotype interface, and use SSVEP responses to input commands that get converted into natural language. This could then be displayed as text or converted to speech. The potential impact for people with locked-in syndrome is exciting - it could significantly increase their communication speed and help normalize their daily interactions. Of course, this would eventually require developing a training program with stenography experts and educators to teach people with quadriplegia how to use the system effectively.
+            </p>
+            
+            <p>
+                While I'm committed to creating an affordable solution, I've realized it might be best to start with a more capable EEG system like the OpenBCI Ultracortex Mark IV, which has 16 channels compared to the Ganglion's humble 4. This would give us more accurate data to work with initially, and then we could focus on scaling down the solution while maintaining effectiveness.
+            </p>
+        </div>
+    </div>
+
+    <!-- Rest of your entries -->
 </main>
+
+<script>
+function toggleContent(header) {
+    const content = header.nextElementSibling;
+    const arrow = header.querySelector('.dropdown-arrow');
+    content.classList.toggle('active');
+    arrow.classList.toggle('active');
+}
+</script>

@@ -31,7 +31,7 @@ main {
     }
 
     .progress-fill {
-    width: 7.5%; /* Adjust based on actual progress */
+    width: 12.50%; /* <-------------- BOOK PROGRESS BAR -------------> */
     height: 100%;
     background-color: var(--eink-black);
     }
@@ -103,13 +103,35 @@ main {
 <%- contentFor('body') %>
 <main>
     <div class="sidebar">
-        <p><strong>Books I've Read</strong><br> 2025 Goal: 3/40</p>
+        <p><strong>Books I've Read</strong><br> 2025 Goal: 5/40</p>
         <div class="progress-bar">
             <div class="progress-fill"></div>
         </div>
     </div>
 
     <div class="content">
+
+        <div class="book-entry">
+            <div class="book-cover">
+                <img src="/images/bookCovers/NotesFromUnderground.jpg" alt="Blink">
+            </div>
+            <div class="book-info">
+                <div class="book-author">Fyodor Dostoevsky</div>
+                <h2>Notes From Underground</h2>
+                <p class="book-review">12/31/2024</p>
+            </div>
+        </div>
+
+        <div class="book-entry">
+            <div class="book-cover">
+                <img src="/images/bookCovers/LetterstoAYoungPoet.jpg" alt="Blink">
+            </div>
+            <div class="book-info">
+                <div class="book-author">Rainer Maria Rilke</div>
+                <h2>Letters to a Young Poet</h2>
+                <p class="book-review">12/25/2024</p>
+            </div>
+        </div>
 
         <div class="book-entry">
             <div class="book-cover">
