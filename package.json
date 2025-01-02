@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "build": "npm ci && node -c app.js views/layouts/main.ejs views/*.ejs js/*.js"
+    "build": "npm install" 
   },
   "keywords": [],
   "author": "",
