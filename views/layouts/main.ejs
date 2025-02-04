@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %> - Hadi Fawad</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* E-ink grayscale color variables */
         :root {
@@ -17,7 +19,6 @@
             --eink-light: #CBCBCB;
             --eink-white: #FFFFFF;
         }
-
         body {
             font-family: "Literata", "Charter", "Palatino", Georgia, serif;
             line-height: 1.6;
@@ -26,91 +27,75 @@
             background-color: #d8d1c6;
             color: var(--eink-black);
         }
-
         nav {
             padding: 1rem;
             margin: 0 2rem 2rem 2rem;
             border-bottom: 2px solid var(--eink-black);
         }
-
         nav a {
             margin-right: 2rem;
             color: var(--eink-black);
             text-decoration: none;
             font-size: 0.9rem;
         }
-
         nav a:hover {
             color: var(--eink-mid-dark);
         }
-
         main {
             padding: 0 2rem;
         }
-
         h1 {
             font-size: 2rem;
             margin-bottom: 1.5rem;
             color: var(--eink-black);
             text-align: left;
         }
-
         h2 {
             font-size: 1.25rem;
             margin-top: 2rem;
             color: var(--eink-darker);
             text-align: left;
         }
-
         ul {
             list-style-type: none;
             padding-left: 0;
             text-align: left;
         }
-
         li {
             margin-bottom: 0rem;
         }
-
         a {
             color: var(--eink-darker);
             text-decoration: underline;
             text-decoration-thickness: 1px;
             text-underline-offset: 2px;
         }
-
         a:hover {
             color: var(--eink-black);
         }
-
         .social-links {
-        margin: 2rem;  /* Change from margin-top to margin for consistent spacing */
-        padding-top: 1rem;
-        border-top: 1px solid var(--eink-black);
-        text-align: left;
+            margin: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--eink-black);
+            text-align: left;
         }
-
         .social-links a {
-            margin-right: 2rem;  /* Match nav link spacing */
+            margin-right: 2rem;
             color: var(--eink-black);
-            text-decoration: none;  /* Remove underline to match nav */
-            font-size: 0.9rem;     /* Match nav font size */
+            text-decoration: none;
+            font-size: 0.9rem;
         }
-
         .social-links a:hover {
-            color: var(--eink-mid-dark);  /* Match nav hover effect */
+            color: var(--eink-mid-dark);
         }
-
         @media (max-width: 600px) {
             main {
                 padding: 0 1rem;
             }
-
             nav {
                 padding: 1rem;
                 margin: 0 1rem 1rem 1rem;
             }
-
             nav a {
                 display: block;
                 margin-bottom: 0.5rem;
@@ -121,20 +106,18 @@
 </head>
 <body>
     <nav>
-        <a href="/">home 🏛️</a>
-        <a href="/work">my work 💼</a>
-        <a href="/research">research notes 📝</a>
-        <a href="/books">books i've read 📚</a>
-        <a href="/photos">photos i've taken 📷</a>
+        <a href="/">home <i class="fas fa-home"></i></a>
+        <a href="/work">my work <i class="fas fa-briefcase"></i></a>
+        <a href="/research">research notes <i class="fas fa-book"></i></a>
+        <a href="/books">books i've read <i class="fas fa-book-open"></i></a>
+        <a href="/photos">photos i've taken <i class="fas fa-camera"></i></a>
     </nav>
-
     <%- body %>
-
     <div class="social-links">
-        <a href="https://www.linkedin.com/in/abdul-hadi-fawad/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/Hadi-Fawad" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://x.com/HadiFawadd" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="https://letterboxd.com/HFawad/" target="_blank" rel="noopener noreferrer">Letterboxd</a>
+        <a href="https://www.linkedin.com/in/abdul-hadi-fawad/" target="_blank" rel="noopener noreferrer">LinkedIn <i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Hadi-Fawad" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a>
+        <a href="https://x.com/HadiFawadd" target="_blank" rel="noopener noreferrer">Twitter <i class="fab fa-x-twitter"></i></a>
+        <a href="https://letterboxd.com/HFawad/" target="_blank" rel="noopener noreferrer">Letterboxd <i class="fas fa-film"></i></a>
     </div>
 </body>
 </html>
